@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.14.0
-// source: proto/probe.proto
+// source: proto/Probe.proto
 
 package proto
 
@@ -561,14 +561,14 @@ var file_proto_probe_proto_goTypes = []interface{}{
 	(*Receipt)(nil),    // 4: proto.Receipt
 }
 var file_proto_probe_proto_depIdxs = []int32{
-	1, // 0: proto.probeService.ReportSystemState:input_type -> proto.State
-	0, // 1: proto.probeService.ReportSystemInfo:input_type -> proto.Host
-	3, // 2: proto.probeService.ReportTask:input_type -> proto.TaskResult
-	0, // 3: proto.probeService.RequestTask:input_type -> proto.Host
-	4, // 4: proto.probeService.ReportSystemState:output_type -> proto.Receipt
-	4, // 5: proto.probeService.ReportSystemInfo:output_type -> proto.Receipt
-	4, // 6: proto.probeService.ReportTask:output_type -> proto.Receipt
-	2, // 7: proto.probeService.RequestTask:output_type -> proto.Task
+	1, // 0: proto.ProbeService.ReportSystemState:input_type -> proto.State
+	0, // 1: proto.ProbeService.ReportSystemInfo:input_type -> proto.Host
+	3, // 2: proto.ProbeService.ReportTask:input_type -> proto.TaskResult
+	0, // 3: proto.ProbeService.RequestTask:input_type -> proto.Host
+	4, // 4: proto.ProbeService.ReportSystemState:output_type -> proto.Receipt
+	4, // 5: proto.ProbeService.ReportSystemInfo:output_type -> proto.Receipt
+	4, // 6: proto.ProbeService.ReportTask:output_type -> proto.Receipt
+	2, // 7: proto.ProbeService.RequestTask:output_type -> proto.Task
 	4, // [4:8] is the sub-list for method output_type
 	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -671,27 +671,27 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// probeServiceClient is the client API for probeService service.
+// ProbeServiceClient is the client API for ProbeService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type probeServiceClient interface {
+type ProbeServiceClient interface {
 	ReportSystemState(ctx context.Context, in *State, opts ...grpc.CallOption) (*Receipt, error)
 	ReportSystemInfo(ctx context.Context, in *Host, opts ...grpc.CallOption) (*Receipt, error)
 	ReportTask(ctx context.Context, in *TaskResult, opts ...grpc.CallOption) (*Receipt, error)
-	RequestTask(ctx context.Context, in *Host, opts ...grpc.CallOption) (probeService_RequestTaskClient, error)
+	RequestTask(ctx context.Context, in *Host, opts ...grpc.CallOption) (ProbeService_RequestTaskClient, error)
 }
 
 type probeServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewprobeServiceClient(cc grpc.ClientConnInterface) probeServiceClient {
+func NewProbeServiceClient(cc grpc.ClientConnInterface) ProbeServiceClient {
 	return &probeServiceClient{cc}
 }
 
 func (c *probeServiceClient) ReportSystemState(ctx context.Context, in *State, opts ...grpc.CallOption) (*Receipt, error) {
 	out := new(Receipt)
-	err := c.cc.Invoke(ctx, "/proto.probeService/ReportSystemState", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.ProbeService/ReportSystemState", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -700,7 +700,7 @@ func (c *probeServiceClient) ReportSystemState(ctx context.Context, in *State, o
 
 func (c *probeServiceClient) ReportSystemInfo(ctx context.Context, in *Host, opts ...grpc.CallOption) (*Receipt, error) {
 	out := new(Receipt)
-	err := c.cc.Invoke(ctx, "/proto.probeService/ReportSystemInfo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.ProbeService/ReportSystemInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -709,15 +709,15 @@ func (c *probeServiceClient) ReportSystemInfo(ctx context.Context, in *Host, opt
 
 func (c *probeServiceClient) ReportTask(ctx context.Context, in *TaskResult, opts ...grpc.CallOption) (*Receipt, error) {
 	out := new(Receipt)
-	err := c.cc.Invoke(ctx, "/proto.probeService/ReportTask", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.ProbeService/ReportTask", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *probeServiceClient) RequestTask(ctx context.Context, in *Host, opts ...grpc.CallOption) (probeService_RequestTaskClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_probeService_serviceDesc.Streams[0], "/proto.probeService/RequestTask", opts...)
+func (c *probeServiceClient) RequestTask(ctx context.Context, in *Host, opts ...grpc.CallOption) (ProbeService_RequestTaskClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_ProbeService_serviceDesc.Streams[0], "/proto.ProbeService/RequestTask", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -731,7 +731,7 @@ func (c *probeServiceClient) RequestTask(ctx context.Context, in *Host, opts ...
 	return x, nil
 }
 
-type probeService_RequestTaskClient interface {
+type ProbeService_RequestTaskClient interface {
 	Recv() (*Task, error)
 	grpc.ClientStream
 }
@@ -748,98 +748,98 @@ func (x *probeServiceRequestTaskClient) Recv() (*Task, error) {
 	return m, nil
 }
 
-// probeServiceServer is the server API for probeService service.
-type probeServiceServer interface {
+// ProbeServiceServer is the server API for ProbeService service.
+type ProbeServiceServer interface {
 	ReportSystemState(context.Context, *State) (*Receipt, error)
 	ReportSystemInfo(context.Context, *Host) (*Receipt, error)
 	ReportTask(context.Context, *TaskResult) (*Receipt, error)
-	RequestTask(*Host, probeService_RequestTaskServer) error
+	RequestTask(*Host, ProbeService_RequestTaskServer) error
 }
 
-// UnimplementedprobeServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedprobeServiceServer struct {
+// UnimplementedProbeServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedProbeServiceServer struct {
 }
 
-func (*UnimplementedprobeServiceServer) ReportSystemState(context.Context, *State) (*Receipt, error) {
+func (*UnimplementedProbeServiceServer) ReportSystemState(context.Context, *State) (*Receipt, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReportSystemState not implemented")
 }
-func (*UnimplementedprobeServiceServer) ReportSystemInfo(context.Context, *Host) (*Receipt, error) {
+func (*UnimplementedProbeServiceServer) ReportSystemInfo(context.Context, *Host) (*Receipt, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReportSystemInfo not implemented")
 }
-func (*UnimplementedprobeServiceServer) ReportTask(context.Context, *TaskResult) (*Receipt, error) {
+func (*UnimplementedProbeServiceServer) ReportTask(context.Context, *TaskResult) (*Receipt, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReportTask not implemented")
 }
-func (*UnimplementedprobeServiceServer) RequestTask(*Host, probeService_RequestTaskServer) error {
+func (*UnimplementedProbeServiceServer) RequestTask(*Host, ProbeService_RequestTaskServer) error {
 	return status.Errorf(codes.Unimplemented, "method RequestTask not implemented")
 }
 
-func RegisterprobeServiceServer(s *grpc.Server, srv probeServiceServer) {
-	s.RegisterService(&_probeService_serviceDesc, srv)
+func RegisterProbeServiceServer(s *grpc.Server, srv ProbeServiceServer) {
+	s.RegisterService(&_ProbeService_serviceDesc, srv)
 }
 
-func _probeService_ReportSystemState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ProbeService_ReportSystemState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(State)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(probeServiceServer).ReportSystemState(ctx, in)
+		return srv.(ProbeServiceServer).ReportSystemState(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.probeService/ReportSystemState",
+		FullMethod: "/proto.ProbeService/ReportSystemState",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(probeServiceServer).ReportSystemState(ctx, req.(*State))
+		return srv.(ProbeServiceServer).ReportSystemState(ctx, req.(*State))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _probeService_ReportSystemInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ProbeService_ReportSystemInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Host)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(probeServiceServer).ReportSystemInfo(ctx, in)
+		return srv.(ProbeServiceServer).ReportSystemInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.probeService/ReportSystemInfo",
+		FullMethod: "/proto.ProbeService/ReportSystemInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(probeServiceServer).ReportSystemInfo(ctx, req.(*Host))
+		return srv.(ProbeServiceServer).ReportSystemInfo(ctx, req.(*Host))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _probeService_ReportTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ProbeService_ReportTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskResult)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(probeServiceServer).ReportTask(ctx, in)
+		return srv.(ProbeServiceServer).ReportTask(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.probeService/ReportTask",
+		FullMethod: "/proto.ProbeService/ReportTask",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(probeServiceServer).ReportTask(ctx, req.(*TaskResult))
+		return srv.(ProbeServiceServer).ReportTask(ctx, req.(*TaskResult))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _probeService_RequestTask_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _ProbeService_RequestTask_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(Host)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(probeServiceServer).RequestTask(m, &probeServiceRequestTaskServer{stream})
+	return srv.(ProbeServiceServer).RequestTask(m, &probeServiceRequestTaskServer{stream})
 }
 
-type probeService_RequestTaskServer interface {
+type ProbeService_RequestTaskServer interface {
 	Send(*Task) error
 	grpc.ServerStream
 }
@@ -852,29 +852,29 @@ func (x *probeServiceRequestTaskServer) Send(m *Task) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-var _probeService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "proto.probeService",
-	HandlerType: (*probeServiceServer)(nil),
+var _ProbeService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "proto.ProbeService",
+	HandlerType: (*ProbeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "ReportSystemState",
-			Handler:    _probeService_ReportSystemState_Handler,
+			Handler:    _ProbeService_ReportSystemState_Handler,
 		},
 		{
 			MethodName: "ReportSystemInfo",
-			Handler:    _probeService_ReportSystemInfo_Handler,
+			Handler:    _ProbeService_ReportSystemInfo_Handler,
 		},
 		{
 			MethodName: "ReportTask",
-			Handler:    _probeService_ReportTask_Handler,
+			Handler:    _ProbeService_ReportTask_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "RequestTask",
-			Handler:       _probeService_RequestTask_Handler,
+			Handler:       _ProbeService_RequestTask_Handler,
 			ServerStreams: true,
 		},
 	},
-	Metadata: "proto/probe.proto",
+	Metadata: "proto/Probe.proto",
 }
