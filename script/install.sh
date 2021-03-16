@@ -7,7 +7,7 @@
 #   Github: https://github.com/VMGirls/Probe
 #========================================================
 
-BASE_PATH="/etc/Probes"
+BASE_PATH="/opt/Probes"
 DASHBOARD_PATH="${BASE_PATH}/dashboard"
 AGENT_PATH="${BASE_PATH}/agent"
 AGENT_SERVICE="/etc/systemd/system/Probe-agent.service"

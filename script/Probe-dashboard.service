@@ -14,8 +14,8 @@ After=mariadb.service mysqld.service postgresql.service memcached.service redis.
 Type=simple
 #User=root
 #Group=root
-WorkingDirectory=/etc/Probes/dashboard/
-ExecStart=/etc/Probes/dashboard/Probe-dashboard-linux-amd64
+WorkingDirectory=/opt/Probes/dashboard/
+ExecStart=/opt/Probes/dashboard/Probe-dashboard-linux-amd64
 Restart=always
 #Environment=DEBUG=true
 

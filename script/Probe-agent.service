@@ -14,8 +14,8 @@ After=network.target
 Type=simple
 User=root
 Group=root
-WorkingDirectory=/etc/Probes/agent/
-ExecStart=/etc/Probes/agent/Probe-agent -d -s grpc_host:grpc_port -p client_secret
+WorkingDirectory=/opt/Probes/agent/
+ExecStart=/opt/Probes/agent/Probe-agent -d -s grpc_host:grpc_port -p client_secret
 Restart=always
 #Environment=DEBUG=true
 
