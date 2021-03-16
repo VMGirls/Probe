@@ -1,6 +1,6 @@
 # 哪吒监控
-
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/VMGirls/Probe/Dashboard%20image?label=管理面板%20v0.4.12&logo=github&style=for-the-badge) ![Agent release](https://img.shields.io/github/v/release/VMGirls/Probe?color=brightgreen&label=Agent&style=for-the-badge&logo=github) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/VMGirls/Probe/Agent%20release?label=Agent%20CI&logo=github&style=for-the-badge) ![shell](https://img.shields.io/badge/安装脚本-v0.4.9-brightgreen?style=for-the-badge&logo=linux)
+>> 自用修改版
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/VMGirls/Probe/Dashboard%20image?label=管理面板%20v2.0.1&logo=github&style=for-the-badge) ![Agent release](https://img.shields.io/github/v/release/VMGirls/Probe?color=brightgreen&label=Agent&style=for-the-badge&logo=github) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/VMGirls/Probe/Agent%20release?label=Agent%20CI&logo=github&style=for-the-badge) ![shell](https://img.shields.io/badge/安装脚本-v2.0.1-brightgreen?style=for-the-badge&logo=linux)
 
 :trollface: 哪吒监控 一站式轻监控轻运维系统。支持系统状态、HTTP(SSL 证书变更、即将到期、到期)、TCP、Ping 监控报警，命令批量执行和计划任务。
 
