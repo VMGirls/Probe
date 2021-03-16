@@ -337,8 +337,7 @@ color: #ff5722;
       background: rgb(0 0 0 / 40%) none;
 }
 
-[data-tooltip]:after [
-  
+[data-tooltip]:after {
   border: 0px;
   border-radius: 0px;
   background: rgb(255 255 255 / 78%);
@@ -347,4 +346,4 @@ color: #ff5722;
   -ms-user-select: none;
   user-select: none;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-]
+}
